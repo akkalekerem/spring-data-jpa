@@ -1,4 +1,4 @@
-package com.keremakkale.springdatajpa;
+package com.keremakkale.starter;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

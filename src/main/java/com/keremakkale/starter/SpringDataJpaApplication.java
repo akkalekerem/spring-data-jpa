@@ -1,4 +1,4 @@
-package com.keremakkale.springdatajpa;
+package com.keremakkale.starter;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
