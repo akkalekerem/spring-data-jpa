@@ -1,6 +1,8 @@
 package com.keremakkale.controller.impl;
 
 
+import com.keremakkale.dto.DtoStudent;
+import com.keremakkale.dto.DtoStudentIU;
 import com.keremakkale.entities.Student;
 import com.keremakkale.services.IStudentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,20 +21,20 @@ public class StudentControllerImpl implements IStudentController {
 
     @PostMapping(path = "/save")
     @Override
-    public Student saveStudent(@RequestBody Student student){
-        // Implementation for saving a student
-        return studentService.saveStudent(student); // Placeholder return statement
+    public DtoStudent saveStudent(@RequestBody DtoStudentIU dtoStudentIU){
+
+        return studentService.saveStudent(dtoStudentIU);
     }
 
     @GetMapping(path = "/list")
     @Override
-    public List<Student> getAllStudents() {
+    public List<DtoStudent> getAllStudents() {
         return studentService.getAllStudents();
     }
 
     @GetMapping("/list/{id}")
     @Override
-    public Student getStudentById(@PathVariable(name="id") Integer id) {
+    public DtoStudent getStudentById(@PathVariable(name="id") Integer id) {
         return studentService.getStudentById(id);
     }
 
@@ -44,7 +46,7 @@ public class StudentControllerImpl implements IStudentController {
 
     @PutMapping("/update-student/{id}")
     @Override
-    public Student updateStudent(@PathVariable(name = "id") Integer id, @RequestBody Student updateStudent) {
+    public DtoStudent updateStudent(@PathVariable(name = "id") Integer id, @RequestBody DtoStudentIU updateStudent) {
         return studentService.updateStudent(id, updateStudent);
     }
 }

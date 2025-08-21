@@ -40,5 +40,19 @@ DELETE public void deleteSınıismiById(Integer id);
  
 Ardından hemen normal Service sınıfımıza gigip methodu @Override ediyoruz.  
 Methodu yazdıktan sonra @Autowired ile bağladığımız Repository nesnemizi yazıp yanına . koyup gereken işlemi yazıyoruz.  
-//Örneğin return studentRepository.save(student) //Studenti veri tabanına kaydetmesi için Repository'ye gönderir. 
+//Örneğin return studentRepository.save(student) //Studenti veri tabanına kaydetmesi için Repository'ye gönderir.  
 
+DTO  
+Verilerin korunması ve ihtiyaç olunan kadar verinin çağırılması için kullanılmalıdır.
+
+DTO paketinde 2 class oluşturduk (DtoStudent, DtoStudenIU)
+DtoStudentIU //IU = Insert Update demek.
+
+DtoStudent = GET işlemlerinde bu kullanılır.  
+DtoStudentIU = INSERT UPDATE işlemlerinde bu kullanılır.  
+
+public *DtoStudent* saveStudent(*DtoStudentIU* student);  //Insert işlemi olduğundan. studenti IU lu aldım ama baş kısmına IU'suz versiyonunu yazdım.
+
+
+BeanUtils.copyProperties(dtoStudentIU, student);  
+BeanUtils.copyProperties metodu, dtoStudentIU içindeki verileri alır ve adları aynı olan alanları student nesnesine kopyalar. Bu, DTO'dan entity'ye veri aktarımı için pratik bir yoldur.
