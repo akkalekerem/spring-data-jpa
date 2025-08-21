@@ -25,3 +25,20 @@ spring.datasource.password=<Your_Password>
  @Column(name = "last_name" , nullable = false) nullable = false kısmı = Boş geçilemez demek.
 
 @EntityScan(basePackages = {"com.keremakkale"}) = Entity anatasyonu var mı diye tara (Bu özelliği kesinlikle uygulamayı çalıştıracak class'a atamak gerekiyor)
+
+---------------------------------------------------------------------  
+public interface StudentRepository extends JpaRepository<Student, Integer> { = Repository'i sadece Interface şekinde açıp, bu şekilde JpaRepository'i extend etmeliyiz.  
+ 
+@Autowired
+private StudentRepository studentRepository;  
+//Bu şekilde ServiceImpl classımda Repository ile bağlantımı kurdum.
+
+İşlem yaparken her daim Service'in Interfacesinden başla, public POST(ekliceksen ekleyeceğin sınıftan bir saveSınıfismi (Sınıfismi sınıfismi); şeklinde yap)  
+GET (Sınıfismi getSınıfismiById(Integer id);)    
+Liste şeklinde göstericeksen public List<SınıfIsmi> getAllSınıfismi();  
+DELETE public void deleteSınıismiById(Integer id);  
+ 
+Ardından hemen normal Service sınıfımıza gigip methodu @Override ediyoruz.  
+Methodu yazdıktan sonra @Autowired ile bağladığımız Repository nesnemizi yazıp yanına . koyup gereken işlemi yazıyoruz.  
+//Örneğin return studentRepository.save(student) //Studenti veri tabanına kaydetmesi için Repository'ye gönderir. 
+
