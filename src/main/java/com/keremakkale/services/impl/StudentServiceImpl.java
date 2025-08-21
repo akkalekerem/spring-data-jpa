@@ -39,4 +39,18 @@ public class StudentServiceImpl implements IStudentService {
         }*/
         studentRepository.deleteById(id);
     }
+
+    @Override
+    public Student updateStudent(Integer id, Student updateStudent) {
+        Optional<Student> optionalStudent = studentRepository.findById(id);
+        if(optionalStudent.isPresent()){
+            Student existingStudent = optionalStudent.get();
+            existingStudent.setFirstName(updateStudent.getFirstName());
+            existingStudent.setLastName(updateStudent.getLastName());
+            existingStudent.setBirthDate(updateStudent.getBirthDate());
+            return studentRepository.save(existingStudent);
+        }
+        return null;
+    }
+
 }
