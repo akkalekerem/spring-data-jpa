@@ -33,7 +33,7 @@ public class StudentServiceImpl implements IStudentService {
     public List<DtoStudent> getAllStudents(){
          List<DtoStudent> dtoList = new ArrayList<>();
 
-         List<Student> studentList = studentRepository.findAll();
+         List<Student> studentList = studentRepository.findAllStudents();  //@Query ile yazdığımız metot.
          for (Student student : studentList){
                 DtoStudent dtoStudent = new DtoStudent();
                 BeanUtils.copyProperties(student, dtoStudent);

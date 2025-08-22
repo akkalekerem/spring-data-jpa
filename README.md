@@ -56,3 +56,9 @@ public *DtoStudent* saveStudent(*DtoStudentIU* student);  //Insert işlemi oldu�
 
 BeanUtils.copyProperties(dtoStudentIU, student);  
 BeanUtils.copyProperties metodu, dtoStudentIU içindeki verileri alır ve adları aynı olan alanları student nesnesine kopyalar. Bu, DTO'dan entity'ye veri aktarımı için pratik bir yoldur.
+
+HQL : Sınıfın ismi ve değişken isimleri ile sorgu yazılır.  
+SQL : Veritabanı tablo ve sütun isimleri ile sorgu yazılır  
+
+nativeQuery = true  => SQL sorgusu  
+nativeQuery = false => HQL sorgusu
