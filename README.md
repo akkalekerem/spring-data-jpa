@@ -62,3 +62,10 @@ SQL : Veritabanı tablo ve sütun isimleri ile sorgu yazılır
 
 nativeQuery = true  => SQL sorgusu  
 nativeQuery = false => HQL sorgusu
+
+String firtname; -> Blank  
+String firstname = null; -> Null  
+String firstname= ""; -> Empty  
+
+Koda Validation eklendi.  saveStudent methodununa @Valid ekledik ki Validation içindeki anatasyonlar aktif hale gelsin.  
+Validation işlemleri sunucular üzerindeki işlem yükünü azaltır.
