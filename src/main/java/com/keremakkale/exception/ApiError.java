@@ -21,3 +21,5 @@ public class ApiError<T> {  //Generic yapıyı öğrenmeye çalışıyorum.
 
     private T errors;
 }
+
+//<T> harfi, bu sınıfın herhangi bir veri tipini tutabilen esnek bir yapıya sahip olduğunu gösterir.
